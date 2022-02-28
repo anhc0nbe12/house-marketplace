@@ -26,7 +26,7 @@ function Category() {
         collect,
         where('type', '==', params.CategoryType),
         orderBy('timestamp', 'desc'),
-        limit(10)
+        limit(2)
       )
       let docs = []
       const docSnap = await getDocs(q)
@@ -50,7 +50,7 @@ function Category() {
         where('type', '==', params.CategoryType),
         orderBy('timestamp', 'desc'),
         startAfter(lastFetchListings),
-        limit(10)
+        limit(2)
       )
       let docs = []
       const docSnap = await getDocs(q)
